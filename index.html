@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+    <!-- Taken from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidebar_icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Tab links, each one with an onclick event associated with it -->
+    <div class="sidebar">
+      <button class="brandlinks" onclick="openInfo(event, 'Home')">
+        <i class="fa fa-fw fa-home"></i>
+        Épicerie-Express
+      </button>
+      <button class="tablinks" onclick="openInfo(event, 'Client')">
+        <i class="fa fa-fw fa-user"></i> Vos préférences alimentaires
+      </button>
+      <button class="tablinks" onclick="openInfo(event, 'Products')">
+        <i class="fa fa-fw fa-lemon-o" aria-hidden="true"></i> Tous les produits
+      </button>
+      <button class="tablinks" onclick="openInfo(event, 'Cart')">
+        <i class="fa fa-fw fa-shopping-basket"></i> Mon panier
+      </button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="Home" class="tabcontent">
+      <h2>Bienvenue à Épicerie-Express !!!</h2>
+      <h3>Qui sommes-nous ?</h3>
+      <p>
+        Épicerie-Express est une épicerie en ligne adaptative répondant aux
+        besoins specifique de chaque client, qui offre une large gamme
+        multimarques de produits d'épicerie 100% Vegan et Bio livrés en 24-48h
+        !!!
+      </p>
+      <p>
+        Une offre unique, en perpetuelle évolution, de produits certifiés et
+        labelisés, qui conviendra à tous que vous soyez Vegan, Végétariens, au
+        régime sans gluten ou même Flexitariens.
+      </p>
+      <h3>Commencer vos achats !</h3>
+      <button class="tablinks" onclick="openInfo(event, 'Client')">
+        Magasiner
+      </button>
+    </div>
+
+    <div id="Client" class="tabcontent">
+      <h2>Information du client</h2>
+      <p>Parlez-nous un peu de vous.</p>
+      Choisissez votre style de vie ou besoin alimentaire :
+      <select
+        id="dietSelect"
+        name="dietSelect"
+        onchange="populateListProductChoices(this.id, 'displayProduct')"
+      >
+        <option value=""></option>
+        <option value="Vegetarian">Végétarien</option>
+        <option value="GlutenFree">Sans gluten</option>
+        <option value="Organique">Organique</option>
+        <option value="Non-organique">Non-organique</option>
+        <option value="None">Aucune</option>
+      </select>
+    </div>
+
+    <div id="Products" class="tabcontent">
+      <h2>Vos produits ciblés</h2>
+      <p>
+        Nous avons présélectionné des produits en fonction de vos préférences
+        alimentaires.
+      </p>
+      Choisissez les articles à acheter :
+      <div id="displayProduct"></div>
+      <button
+        id="addCart"
+        type="button"
+        class="block"
+        onclick="selectedItems()"
+      >
+        Ajouter les articles sélectionnés au panier.
+      </button>
+    </div>
+
+    <div id="Cart" class="tabcontent">
+      <h2>Votre panier</h2>
+      <p>Voici le contenu de votre panier.</p>
+      <div id="displayCart"></div>
+    </div>
+
+    <p id="signature">Site Web conçu par Mamadou Bah, 2020</p>
+
+    <script src="scripts/groceries.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
