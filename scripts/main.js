@@ -37,8 +37,15 @@ function populateListProductChoices(slct1, slct2) {
   // <label for="Bread">Bread/label><br>
 
   for (i = 0; i < optionArray.length; i++) {
-    var productDescription = optionArray[i].name;
-    var productPrice = " $" + optionArray[i].price;
+    // Ce bout de code a ete inspire de "https://stackoverflow.com/questions/14004117/create-div-and-append-div-dynamically"
+
+    //  Javascript pour l'utilisation du patron structure "centre-scène"
+    // Create the inner div before appending to the body
+    var innerDiv = document.createElement("div");
+    innerDiv.className = "productBlock";
+
+    var productDescription =
+      optionArray[i].name + " - prix: $" + optionArray[i].price;
     var productImageSrc = optionArray[i].image;
 
     // create the checkbox and add in HTML DOM
@@ -46,31 +53,21 @@ function populateListProductChoices(slct1, slct2) {
     checkbox.type = "checkbox";
     checkbox.name = "product";
     checkbox.value = productDescription;
-    s2.appendChild(checkbox);
+    innerDiv.appendChild(checkbox);
 
     // create a label for the checkbox, and also add in HTML DOM
     var label = document.createElement("label");
     label.htmlFor = productDescription;
     label.appendChild(document.createTextNode(productDescription));
-    s2.appendChild(label);
+    innerDiv.appendChild(label);
 
-    // create a label for the price, and also add in HTML DOM
-    var label = document.createElement("label");
-    label.htmlFor = productPrice;
-    label.appendChild(document.createTextNode(productPrice));
-    s2.appendChild(label);
-
-    // create a label for the image, and also add in HTML DOM
-    // var image = document.createElement("image");
-    // image.htmlFor = productImageSrc;
-    // image.appendChild(document.createTextNode(productImageSrc));
-    // s2.appendChild(image);
+    // create the image, and also add in HTML DOM
     console.log("productImageSrc ", productImageSrc);
     var img = document.createElement("img");
     img.src = productImageSrc;
-    s2.appendChild(img);
-    // var src = document.getElementById("checkbox");
-    // src.appendChild(img);
+    innerDiv.appendChild(img);
+
+    s2.appendChild(innerDiv);
 
     // create a breakline node and add in HTML DOM
     s2.appendChild(document.createElement("br"));
@@ -103,6 +100,6 @@ function selectedItems() {
   // add paragraph and total price
   c.appendChild(para);
   c.appendChild(
-    document.createTextNode("Total Price is " + getTotalPrice(chosenProducts))
+    document.createTextNode("Total Price is: $" + getTotalPrice(chosenProducts))
   );
 }

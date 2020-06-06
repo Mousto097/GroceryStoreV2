@@ -1,6 +1,10 @@
 // Array of products, each product is an object with different fieldset
 // A set of ingredients should be added to products
 
+// Toutes les images dans assets/img ont telecharger a partir de Google Images
+// J'ai trouvé ces images en faisant de simple recherche sur Google et puis j'ai
+// enregostrer l'image dans repository
+
 var products = [
   {
     name: "Brocoli",
@@ -134,28 +138,19 @@ function getTotalPrice(chosenProducts) {
   totalPrice = 0;
   var chosenProductsNames = [];
 
-  console.log("chosenProducts before processing", chosenProducts);
   for (let i = 0; i < chosenProducts.length; i += 1) {
     //Processing the chosenProducts array
     if (chosenProducts) {
-      console.log(i, chosenProducts[i]);
       var productName = chosenProducts[i].split(" ");
-      console.log("Name is", productName[0]);
       chosenProductsNames.push(productName[0]);
-      console.log("Processed array is", chosenProductsNames);
     }
   }
 
-  console.log("After processing array is", chosenProductsNames);
   for (let i = 0; i < products.length; i += 1) {
-    console.log(
-      "is selected element in product",
-      chosenProductsNames.indexOf(products[i].name) > -1
-    );
     if (chosenProductsNames.indexOf(products[i].name) > -1) {
       totalPrice += products[i].price;
     }
   }
-
-  return totalPrice;
+  result = totalPrice.toFixed(2);
+  return result;
 }

@@ -64,13 +64,22 @@ body {
 }
 
 img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   display: block;
-  margin-left: 0;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border: 2px solid #18e2e9;
+  margin: auto;
+  border: 1px solid black;
   border-radius: 4px;
-  padding: 5px;
+}
+
+/*  CSS pour l'utilisation du patron structure "centre-scène"*/
+#displayProduct {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  margin: auto;
+}
+
+.productBlock {
+  margin: 10px;
 }
