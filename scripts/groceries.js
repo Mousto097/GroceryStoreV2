@@ -8,6 +8,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 1.99,
+    image: "assets/img/brocoli.jpeg",
   },
   {
     name: "Pain",
@@ -15,6 +16,7 @@ var products = [
     glutenFree: false,
     organic: false,
     price: 2.35,
+    image: "assets/img/pain.jpg",
   },
   {
     name: "Saumon",
@@ -22,6 +24,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 10.99,
+    image: "assets/img/saumon.jpg",
   },
   {
     name: "Riz",
@@ -29,6 +32,7 @@ var products = [
     glutenFree: false,
     organic: false,
     price: 12.35,
+    image: "assets/img/riz.jpg",
   },
   {
     name: "Lait",
@@ -36,6 +40,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 4.53,
+    image: "assets/img/milk.jpg",
   },
   {
     name: "Banana",
@@ -43,6 +48,7 @@ var products = [
     glutenFree: true,
     organic: false,
     price: 2.49,
+    image: "assets/img/banana.jpg",
   },
   {
     name: "Chia",
@@ -50,6 +56,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 3.99,
+    image: "assets/img/shia.jpg",
   },
   {
     name: "Patate",
@@ -57,6 +64,7 @@ var products = [
     glutenFree: false,
     organic: true,
     price: 4.78,
+    image: "assets/img/potato.jpeg",
   },
   {
     name: "Biscotti",
@@ -64,6 +72,7 @@ var products = [
     glutenFree: true,
     organic: false,
     price: 4.99,
+    image: "assets/img/biscotti.jpg",
   },
   {
     name: "Maïs",
@@ -71,6 +80,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 2.79,
+    image: "assets/img/mais.jpg",
   },
   {
     name: "Craquelins",
@@ -78,6 +88,7 @@ var products = [
     glutenFree: true,
     organic: false,
     price: 5.49,
+    image: "assets/img/craquelins.jpg",
   },
   {
     name: "Pâtes",
@@ -85,6 +96,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 3.99,
+    image: "assets/img/pate.jpg",
   },
 ];
 
