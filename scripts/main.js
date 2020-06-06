@@ -39,7 +39,7 @@ function populateListProductChoices(slct1, slct2) {
   for (i = 0; i < optionArray.length; i++) {
     // Ce bout de code a ete inspire de "https://stackoverflow.com/questions/14004117/create-div-and-append-div-dynamically"
 
-    //  Javascript pour l'utilisation du patron structure "centre-scène"
+    //  Javascript pour l'utilisation des composantes (widgets) "case à cocher"
     // Create the inner div before appending to the body
     var innerDiv = document.createElement("div");
     innerDiv.className = "productBlock";
@@ -48,6 +48,7 @@ function populateListProductChoices(slct1, slct2) {
       optionArray[i].name + " - prix: $" + optionArray[i].price;
     var productImageSrc = optionArray[i].image;
 
+    //  Javascript pour l'utilisation du patron structure "centre-scène"
     // create the checkbox and add in HTML DOM
     var checkbox = document.createElement("input");
     checkbox.type = "checkbox";
